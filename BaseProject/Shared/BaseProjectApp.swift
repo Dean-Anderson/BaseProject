@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import APIKit
 
 @main
 struct BaseProjectApp: App {
