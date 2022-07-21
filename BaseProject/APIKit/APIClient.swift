@@ -8,29 +8,22 @@
 import Foundation
 import Combine
 
-enum HttpMethod: String {
+public enum HttpMethod: String {
     case get = "GET"
     case post = "POST"
     case delete = "DELETE"
     case put = "PUT"
 }
 
-enum APIError: Error {
+public enum APIError: Error {
     case urlRequestCreateFailed
     case decodeFail
     case unexpected
+    case urlError(URLError)
+    case data(Data)
 }
 
-protocol DefinedError: Error {
-    init(error: Error)
-    init(data: Data)
-    init(urlError: URLError)
-}
-
-protocol APIClient {
-    associatedtype Data: Decodable
-    associatedtype ClientDefinedError: DefinedError
-    
+public protocol APIClient {
     var domain: String { get }
     var headers: [String: String]? { get }
     var commonHeaders: [String: String]? { get }
@@ -39,10 +32,13 @@ protocol APIClient {
     var session: URLSession { get }
     var decoder: JSONDecoder { get }
     
-    func request() -> AnyPublisher<Data, Error>
+    func request() -> AnyPublisher<Data, APIError>
+    
+    var mock: Data? { get }
+    func requestMock() -> AnyPublisher<Data, APIError>
 }
 
-private extension APIClient {
+public extension APIClient {
     var session: URLSession { URLSession.shared }
     
     var decoder: JSONDecoder { JSONDecoder() }
@@ -78,14 +74,14 @@ private extension APIClient {
         return request
     }
     
-    func request() -> AnyPublisher<Data, Error> {
+    func request() -> AnyPublisher<Data, APIError> {
         guard let request = createURLRequest() else { return Fail(error: APIError.urlRequestCreateFailed).eraseToAnyPublisher() }
         
         return session.dataTaskPublisher(for: request)
             .receive(on: DispatchQueue.main)
-            .mapError { ClientDefinedError(urlError: $0) }
+            .mapError { APIError.urlError($0) }
             .eraseToAnyPublisher()
-            .flatMap({ (data, response) -> AnyPublisher<Data, Error> in
+            .flatMap({ (data, response) -> AnyPublisher<Data, APIError> in
                 guard let response = response as? HTTPURLResponse else {
                     return Fail(error: APIError.unexpected).eraseToAnyPublisher()
                 }
@@ -96,9 +92,14 @@ private extension APIClient {
                         .mapError { _ in APIError.decodeFail }
                         .eraseToAnyPublisher()
                 } else {
-                    return Fail(error: ClientDefinedError(data: data)).eraseToAnyPublisher()
+                    return Fail(error: APIError.data(data)).eraseToAnyPublisher()
                 }
             })
             .eraseToAnyPublisher()
+    }
+    
+    func requestMock() -> AnyPublisher<Data, APIError> {
+        guard let mock = mock else { return Empty<Data, APIError>().eraseToAnyPublisher() }
+        return Just(mock).mapError { _ in APIError.unexpected }.eraseToAnyPublisher()
     }
 }
