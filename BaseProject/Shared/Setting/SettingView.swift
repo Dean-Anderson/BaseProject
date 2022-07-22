@@ -16,13 +16,23 @@ struct SettingView: View {
                 Section {
                     ForEach(section.rowItems) { row in
                         switch row {
+                        case let .profile(profile):
+                            SettingProfileView(drawable: profile)
+                            
                         case let .common(drawable):
-                            SettingCommonView(drawable: .constant(drawable))
+                            SettingCommonView(drawable: drawable)
+                            
+                        case let .footer(drawables):
+                            SettingFooterView(drawables: drawables)
                         }
                     }
                 }
             }
         }
+        .padding(EdgeInsets())
+        .onAppear(perform: {
+            UITableView.appearance().separatorColor = .clear // separator color
+        })
     }
 }
 
@@ -35,5 +45,6 @@ struct SettingView_Previews: PreviewProvider {
 private extension SettingView {
     enum Metric {
         static let spacing: CGFloat = 10
+        static let sectionPadding: CGFloat = 20
     }
 }

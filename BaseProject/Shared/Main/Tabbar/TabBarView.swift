@@ -13,18 +13,20 @@ struct TabBarView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: Metric.spacing) {
-            Spacer()
-            ForEach(builders.indices) { offset in
-                TabBarItemView(builder: $builders[offset])
-                    .onTapGesture {
-                        tapSelected?(builders[offset].tabBarItem)
-                    }
-                Spacer()
+            ForEach(builders) { builder in
+                HStack {
+                    Spacer()
+                    TabBarItemView(builder: builder)
+                    Spacer()
+                }
+                .onTapGesture {
+                    tapSelected?(builder.tabBarItem)
+                }
             }
         }
         .padding(Metric.padding)
         .frame(width: nil, height: Metric.height, alignment: .center)
-        .background(Color.white)
+        .background(ColorAssets.lightGray.color)
     }
 }
 

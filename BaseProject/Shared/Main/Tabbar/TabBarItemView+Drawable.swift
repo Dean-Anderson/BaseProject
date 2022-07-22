@@ -36,8 +36,8 @@ struct TabBarItemBuilder: TabBarItemDrawable, Identifiable {
     
     var image: UIImage {
         switch tabBarItem {
-        case .home:    return isSelected ? ImageAssets.ic_24_tab_home_on.uiImage : ImageAssets.ic_24_tab_home_off.uiImage
-        case .setting: return isSelected ? ImageAssets.ic_24_tab_more_on.uiImage : ImageAssets.ic_24_tab_more_off.uiImage
+        case .home:    return isSelected ? ImageAssets.houseFill.uiImage : ImageAssets.house.uiImage
+        case .setting: return isSelected ? ImageAssets.ellipsisFill.uiImage : ImageAssets.ellipsis.uiImage
         }
     }
 

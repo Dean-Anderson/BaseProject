@@ -10,6 +10,9 @@
 		0520FC832889449400DB67E8 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520FC822889449400DB67E8 /* SettingViewModel.swift */; };
 		0520FC862889455A00DB67E8 /* SettingCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520FC852889455A00DB67E8 /* SettingCommonView.swift */; };
 		0520FC8828894AA600DB67E8 /* ColorAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520FC8728894AA600DB67E8 /* ColorAssets.swift */; };
+		0520FC8A288A6CF300DB67E8 /* SettingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520FC89288A6CF300DB67E8 /* SettingProfileView.swift */; };
+		0520FC8C288A6D0100DB67E8 /* SettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520FC8B288A6D0100DB67E8 /* SettingFooterView.swift */; };
+		0520FC8E288A7AF700DB67E8 /* SettingFooterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520FC8D288A7AF700DB67E8 /* SettingFooterItemView.swift */; };
 		05EA69A0287EB0C8009EA2F9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA699F287EB0C8009EA2F9 /* MapView.swift */; };
 		05EA69A1287EB0C8009EA2F9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA699F287EB0C8009EA2F9 /* MapView.swift */; };
 		05EA69B02880F21A009EA2F9 /* JSONAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA69AF2880F21A009EA2F9 /* JSONAssets.swift */; };
@@ -109,6 +112,9 @@
 		0520FC822889449400DB67E8 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		0520FC852889455A00DB67E8 /* SettingCommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCommonView.swift; sourceTree = "<group>"; };
 		0520FC8728894AA600DB67E8 /* ColorAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAssets.swift; sourceTree = "<group>"; };
+		0520FC89288A6CF300DB67E8 /* SettingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileView.swift; sourceTree = "<group>"; };
+		0520FC8B288A6D0100DB67E8 /* SettingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFooterView.swift; sourceTree = "<group>"; };
+		0520FC8D288A7AF700DB67E8 /* SettingFooterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFooterItemView.swift; sourceTree = "<group>"; };
 		05EA699F287EB0C8009EA2F9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		05EA69AF2880F21A009EA2F9 /* JSONAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAssets.swift; sourceTree = "<group>"; };
 		05EA69C528851F40009EA2F9 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
@@ -201,6 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				0520FC852889455A00DB67E8 /* SettingCommonView.swift */,
+				0520FC89288A6CF300DB67E8 /* SettingProfileView.swift */,
+				0520FC8B288A6D0100DB67E8 /* SettingFooterView.swift */,
+				0520FC8D288A7AF700DB67E8 /* SettingFooterItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -624,12 +633,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				05EA69D228853AFC009EA2F9 /* TabBarItemView.swift in Sources */,
+				0520FC8A288A6CF300DB67E8 /* SettingProfileView.swift in Sources */,
 				05FB49E0287983F70039CC50 /* ContentView.swift in Sources */,
 				05EA69EE28864CA7009EA2F9 /* HomeView.swift in Sources */,
 				05FB49DE287983F70039CC50 /* BaseProjectApp.swift in Sources */,
 				0520FC862889455A00DB67E8 /* SettingCommonView.swift in Sources */,
 				05EA69A0287EB0C8009EA2F9 /* MapView.swift in Sources */,
 				05EA69E128856339009EA2F9 /* TabBarContainer.swift in Sources */,
+				0520FC8C288A6D0100DB67E8 /* SettingFooterView.swift in Sources */,
 				05EA69CF28853AEA009EA2F9 /* TabBarView.swift in Sources */,
 				05EA69DA288540EE009EA2F9 /* TabBarItemView+Drawable.swift in Sources */,
 				05EA69D728853DD0009EA2F9 /* Image+Extension.swift in Sources */,
@@ -638,6 +649,7 @@
 				05EA69EB28864C27009EA2F9 /* SettingView.swift in Sources */,
 				05EA69B02880F21A009EA2F9 /* JSONAssets.swift in Sources */,
 				0520FC8828894AA600DB67E8 /* ColorAssets.swift in Sources */,
+				0520FC8E288A7AF700DB67E8 /* SettingFooterItemView.swift in Sources */,
 				05EA69F228864F93009EA2F9 /* TabBarViewModel.swift in Sources */,
 				05EA69E82886496E009EA2F9 /* FontAssets.swift in Sources */,
 			);

@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct TabBarItemView: View {
-    @Binding var builder: TabBarItemBuilder
+    private let builder: TabBarItemBuilder
+    
+    init(builder: TabBarItemBuilder) {
+        self.builder = builder
+    }
     
     var body: some View {
         VStack(alignment: .center, spacing: Metric.spacing) {
             Image(uiImage: builder.image)
+                .renderingMode(.template)
                 .resizable()
+                .foregroundColor(ColorAssets.pink.color)
                 .aspectRatio(contentMode: .fit)
             
             Text(builder.title)
@@ -35,10 +41,10 @@ struct TabBarItemView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(TabBarItem.allCases) { item in
             
-            TabBarItemView(builder: .constant(TabBarItemBuilder(tabBarItem: item, isSelected: true)))
+            TabBarItemView(builder: TabBarItemBuilder(tabBarItem: item, isSelected: true))
                 .previewLayout(.fixed(width: 150, height: 150))
             
-            TabBarItemView(builder: .constant(TabBarItemBuilder(tabBarItem: item, isSelected: false)))
+            TabBarItemView(builder: TabBarItemBuilder(tabBarItem: item, isSelected: false))
                 .previewLayout(.fixed(width: 150, height: 150))
         }
     }

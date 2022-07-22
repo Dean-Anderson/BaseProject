@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingCommonView: View {
-    @Binding var drawable: SettingCommonViewDrawable
+    let drawable: SettingCommonViewDrawable
     
     var body: some View {
         HStack(alignment: .center, spacing: Metric.horizontalSpacing) {
@@ -16,7 +16,7 @@ struct SettingCommonView: View {
                 Image(uiImage: image)
             }
             
-            VStack(alignment: .center, spacing: Metric.verticalSpacing) {
+            VStack(alignment: .leading, spacing: Metric.verticalSpacing) {
                 Text(drawable.title)
                     .setFont(.title)
                     .foregroundColor(ColorAssets.heavyGray.color)
@@ -49,29 +49,29 @@ private extension SettingCommonView {
     enum Metric {
         static let horizontalSpacing: CGFloat = 10
         static let verticalSpacing: CGFloat = 5
-        static let padding: EdgeInsets = .init(top: 20, leading: 10, bottom: 10, trailing: 20)
+        static let padding: EdgeInsets = .init(top: 10, leading: 20, bottom: 10, trailing: 20)
     }
 }
 
 struct SettingCommonView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SettingCommonView(drawable: .constant(SettingCommonViewDTO(title: "Title")))
+            SettingCommonView(drawable: SettingCommonViewDTO(title: "Title"))
                 .previewLayout(.fixed(width: 320, height: 50))
             
-            SettingCommonView(drawable: .constant(SettingCommonViewDTO(image: ImageAssets.ic_24_tab_home_off.uiImage,
-                                                                       title: "Title")))
+            SettingCommonView(drawable: SettingCommonViewDTO(image: ImageAssets.house.uiImage,
+                                                             title: "Title"))
             .previewLayout(.fixed(width: 320, height: 50))
             
-            SettingCommonView(drawable: .constant(SettingCommonViewDTO(image: ImageAssets.ic_24_tab_home_off.uiImage,
-                                                                       title: "Title",
-                                                                       desc: "Desc")))
+            SettingCommonView(drawable: SettingCommonViewDTO(image: ImageAssets.house.uiImage,
+                                                             title: "Title",
+                                                             desc: "Desc"))
             .previewLayout(.fixed(width: 320, height: 50))
             
-            SettingCommonView(drawable: .constant(SettingCommonViewDTO(image: ImageAssets.ic_24_tab_home_off.uiImage,
-                                                                       title: "Title",
-                                                                       desc: "Desc",
-                                                                       postfix: "postfix")))
+            SettingCommonView(drawable: SettingCommonViewDTO(image: ImageAssets.house.uiImage,
+                                                             title: "Title",
+                                                             desc: "Desc",
+                                                             postfix: "postfix"))
             .previewLayout(.fixed(width: 320, height: 50))
         }
     }
