@@ -22,7 +22,8 @@ struct SettingFooterView: View {
             }
         }
         .padding(Metric.padding)
-        .foregroundColor(ColorAssets.lightGray.color)
+        .foregroundColor(.set(.lightGray))
+        .listRowInsets(EdgeInsets())
     }
 }
 

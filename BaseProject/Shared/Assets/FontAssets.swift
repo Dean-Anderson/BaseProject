@@ -39,8 +39,8 @@ extension FontAssets: FontLoadable {
     }
 }
 
-extension Text {
-    func setFont(_ assets: FontAssets) -> Text {
-        font(assets.font)
+extension Font {
+    static func set(_ assets: FontAssets) -> Font? {
+        assets.font
     }
 }

@@ -14,17 +14,17 @@ struct SettingProfileView: View {
         HStack(alignment: .center, spacing: Metric.horizontalSpacing) {
             Image(uiImage: drawable.image)
                 .frame(width: Metric.imageSize, height: Metric.imageSize)
-                .background(ColorAssets.lightGray.color)
+                .background(Color.set(.lightGray))
                 .clipShape(Circle())
             
             VStack(alignment: .leading, spacing: Metric.verticalSpacing) {
                 Text(drawable.name)
-                    .setFont(.title)
-                    .foregroundColor(ColorAssets.heavyGray.color)
+                    .font(.set(.title))
+                    .foregroundColor(.set(.heavyGray))
                 
                 Text(drawable.email)
-                    .setFont(.desc)
-                    .foregroundColor(ColorAssets.gray.color)
+                    .font(.set(.desc))
+                    .foregroundColor(.set(.gray))
             }
             
             Spacer()
@@ -32,7 +32,8 @@ struct SettingProfileView: View {
             Image(uiImage: ImageAssets.bell.uiImage)
         }
         .padding(Metric.padding)
-        .foregroundColor(ColorAssets.lightGray.color)
+        .foregroundColor(.set(.lightGray))
+        .listRowInsets(EdgeInsets())
     }
 }
 

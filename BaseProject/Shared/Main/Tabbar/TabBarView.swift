@@ -26,7 +26,7 @@ struct TabBarView: View {
         }
         .padding(Metric.padding)
         .frame(width: nil, height: Metric.height, alignment: .center)
-        .background(ColorAssets.lightGray.color)
+        .background(Color.set(.lightGray))
     }
 }
 

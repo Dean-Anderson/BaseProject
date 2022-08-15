@@ -15,8 +15,8 @@ struct SettingFooterItemView: View {
             Image(uiImage: drawable.image)
             
             Text(drawable.title)
-                .setFont(.title)
-                .foregroundColor(ColorAssets.heavyGray.color)
+                .font(.set(.title))
+                .foregroundColor(.set(.heavyGray))
         }
     }
 }

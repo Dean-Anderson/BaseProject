@@ -60,3 +60,15 @@ extension ImageAssets: ImageLoadable {
     
     var name: ImageName { .systemName(rawValue) }
 }
+
+extension UIImage {
+    static func set(_ assets: ImageAssets) -> UIImage {
+        assets.uiImage
+    }
+}
+
+extension Image {
+    static func set(_ assets: ImageAssets) -> Image {
+        assets.image
+    }
+}

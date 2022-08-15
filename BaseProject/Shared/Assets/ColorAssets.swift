@@ -27,3 +27,15 @@ extension ColorAssets: ColorLoadable {
     var uiColor: UIColor { UIColor(named: name) ?? UIColor.red }
     var color: Color { Color(uiColor: uiColor)  }
 }
+
+extension UIColor {
+    static func set(_ assets: ColorAssets) -> UIColor {
+        assets.uiColor
+    }
+}
+
+extension Color {
+    static func set(_ assets: ColorAssets) -> Color {
+        assets.color
+    }
+}

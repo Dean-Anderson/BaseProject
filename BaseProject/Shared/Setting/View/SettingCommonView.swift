@@ -18,13 +18,13 @@ struct SettingCommonView: View {
             
             VStack(alignment: .leading, spacing: Metric.verticalSpacing) {
                 Text(drawable.title)
-                    .setFont(.title)
-                    .foregroundColor(ColorAssets.heavyGray.color)
+                    .font(.set(.title))
+                    .foregroundColor(.set(.heavyGray))
                 
                 if let desc = drawable.desc {
                     Text(desc)
-                        .setFont(.desc)
-                        .foregroundColor(ColorAssets.gray.color)
+                        .font(.set(.desc))
+                        .foregroundColor(.set(.gray))
                 }
             }
             
@@ -32,16 +32,17 @@ struct SettingCommonView: View {
             
             if let postfix = drawable.postfix {
                 Text(postfix)
-                    .setFont(.title)
-                    .foregroundColor(ColorAssets.gray.color)
+                    .font(.set(.title))
+                    .foregroundColor(.set(.gray))
             }
             
             Text(">")
-                .setFont(.title)
-                .foregroundColor(ColorAssets.heavyGray.color)
+                .font(.set(.title))
+                .foregroundColor(.set(.heavyGray))
         }
         .padding(Metric.padding)
-        .foregroundColor(ColorAssets.lightGray.color)
+        .foregroundColor(.set(.lightGray))
+        .listRowInsets(EdgeInsets())
     }
 }
 

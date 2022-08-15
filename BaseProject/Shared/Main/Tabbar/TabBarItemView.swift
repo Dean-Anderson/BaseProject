@@ -19,11 +19,11 @@ struct TabBarItemView: View {
             Image(uiImage: builder.image)
                 .renderingMode(.template)
                 .resizable()
-                .foregroundColor(ColorAssets.pink.color)
+                .foregroundColor(.set(.pink))
                 .aspectRatio(contentMode: .fit)
             
             Text(builder.title)
-                .setFont(.title)
+                .font(.set(.title))
                 .multilineTextAlignment(.center)
         }
         .padding(Metric.padding)
