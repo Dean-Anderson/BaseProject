@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct TabBarContainer: View {
-    @ObservedObject private var viewModel: TabBarViewModel
+    @StateObject private var viewModel: TabBarViewModel
     
     init(items: [TabBarItem]) {
-        viewModel = .init(items: items)
+        self._viewModel = .init(wrappedValue: .init(items: items))
     }
 
     var body: some View {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingView: View {
-    @ObservedObject private var viewModel: SettingViewModel = .init()
+    @StateObject private var viewModel: SettingViewModel = .init()
     
     var body: some View {
         List {
