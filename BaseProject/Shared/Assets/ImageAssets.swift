@@ -51,6 +51,8 @@ enum ImageAssets: String {
     case bubble = "bubble.right"
     case person
     case bell
+    case menu = "line.3.horizontal"
+    case circleMinus = "minus.circle"
 }
 
 extension ImageAssets: ImageLoadable {

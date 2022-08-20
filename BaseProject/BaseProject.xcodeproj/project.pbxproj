@@ -13,6 +13,11 @@
 		0520FC8A288A6CF300DB67E8 /* SettingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520FC89288A6CF300DB67E8 /* SettingProfileView.swift */; };
 		0520FC8C288A6D0100DB67E8 /* SettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520FC8B288A6D0100DB67E8 /* SettingFooterView.swift */; };
 		0520FC8E288A7AF700DB67E8 /* SettingFooterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520FC8D288A7AF700DB67E8 /* SettingFooterItemView.swift */; };
+		054E8BCE28B1234B00179E45 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E8BCD28B1234B00179E45 /* TestView.swift */; };
+		054E8BCF28B1234B00179E45 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E8BCD28B1234B00179E45 /* TestView.swift */; };
+		05D80CDA28AA7ECD00BDF35B /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D80CD928AA7ECD00BDF35B /* WidgetView.swift */; };
+		05D80CDD28AA7F1400BDF35B /* WidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D80CDC28AA7F1400BDF35B /* WidgetViewModel.swift */; };
+		05D80CDF28AA819B00BDF35B /* WidgetLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D80CDE28AA819B00BDF35B /* WidgetLocationView.swift */; };
 		05EA69A0287EB0C8009EA2F9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA699F287EB0C8009EA2F9 /* MapView.swift */; };
 		05EA69A1287EB0C8009EA2F9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA699F287EB0C8009EA2F9 /* MapView.swift */; };
 		05EA69B02880F21A009EA2F9 /* JSONAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA69AF2880F21A009EA2F9 /* JSONAssets.swift */; };
@@ -115,6 +120,10 @@
 		0520FC89288A6CF300DB67E8 /* SettingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileView.swift; sourceTree = "<group>"; };
 		0520FC8B288A6D0100DB67E8 /* SettingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFooterView.swift; sourceTree = "<group>"; };
 		0520FC8D288A7AF700DB67E8 /* SettingFooterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFooterItemView.swift; sourceTree = "<group>"; };
+		054E8BCD28B1234B00179E45 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		05D80CD928AA7ECD00BDF35B /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		05D80CDC28AA7F1400BDF35B /* WidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewModel.swift; sourceTree = "<group>"; };
+		05D80CDE28AA819B00BDF35B /* WidgetLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetLocationView.swift; sourceTree = "<group>"; };
 		05EA699F287EB0C8009EA2F9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		05EA69AF2880F21A009EA2F9 /* JSONAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAssets.swift; sourceTree = "<group>"; };
 		05EA69C528851F40009EA2F9 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
@@ -214,6 +223,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		05D80CD728AA7EB500BDF35B /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				05D80CDB28AA7F0700BDF35B /* ViewModel */,
+				05D80CD828AA7EC100BDF35B /* View */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		05D80CD828AA7EC100BDF35B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05D80CD928AA7ECD00BDF35B /* WidgetView.swift */,
+				05D80CDE28AA819B00BDF35B /* WidgetLocationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05D80CDB28AA7F0700BDF35B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				05D80CDC28AA7F1400BDF35B /* WidgetViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		05EA69A62880EDE2009EA2F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,9 +312,11 @@
 		05EA69E42886461E009EA2F9 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				05D80CD728AA7EB500BDF35B /* Widget */,
 				0520FC842889454F00DB67E8 /* View */,
 				0520FC812889448B00DB67E8 /* ViewModel */,
 				05EA69EA28864C27009EA2F9 /* SettingView.swift */,
+				054E8BCD28B1234B00179E45 /* TestView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -635,13 +672,16 @@
 				05EA69D228853AFC009EA2F9 /* TabBarItemView.swift in Sources */,
 				0520FC8A288A6CF300DB67E8 /* SettingProfileView.swift in Sources */,
 				05FB49E0287983F70039CC50 /* ContentView.swift in Sources */,
+				05D80CDF28AA819B00BDF35B /* WidgetLocationView.swift in Sources */,
 				05EA69EE28864CA7009EA2F9 /* HomeView.swift in Sources */,
 				05FB49DE287983F70039CC50 /* BaseProjectApp.swift in Sources */,
 				0520FC862889455A00DB67E8 /* SettingCommonView.swift in Sources */,
 				05EA69A0287EB0C8009EA2F9 /* MapView.swift in Sources */,
 				05EA69E128856339009EA2F9 /* TabBarContainer.swift in Sources */,
 				0520FC8C288A6D0100DB67E8 /* SettingFooterView.swift in Sources */,
+				05D80CDA28AA7ECD00BDF35B /* WidgetView.swift in Sources */,
 				05EA69CF28853AEA009EA2F9 /* TabBarView.swift in Sources */,
+				054E8BCE28B1234B00179E45 /* TestView.swift in Sources */,
 				05EA69DA288540EE009EA2F9 /* TabBarItemView+Drawable.swift in Sources */,
 				05EA69D728853DD0009EA2F9 /* Image+Extension.swift in Sources */,
 				05EA69C628851F40009EA2F9 /* ImageAssets.swift in Sources */,
@@ -649,6 +689,7 @@
 				05EA69EB28864C27009EA2F9 /* SettingView.swift in Sources */,
 				05EA69B02880F21A009EA2F9 /* JSONAssets.swift in Sources */,
 				0520FC8828894AA600DB67E8 /* ColorAssets.swift in Sources */,
+				05D80CDD28AA7F1400BDF35B /* WidgetViewModel.swift in Sources */,
 				0520FC8E288A7AF700DB67E8 /* SettingFooterItemView.swift in Sources */,
 				05EA69F228864F93009EA2F9 /* TabBarViewModel.swift in Sources */,
 				05EA69E82886496E009EA2F9 /* FontAssets.swift in Sources */,
@@ -665,6 +706,7 @@
 				05FB49DF287983F70039CC50 /* BaseProjectApp.swift in Sources */,
 				05EA69A1287EB0C8009EA2F9 /* MapView.swift in Sources */,
 				05EA69E228856339009EA2F9 /* TabBarContainer.swift in Sources */,
+				054E8BCF28B1234B00179E45 /* TestView.swift in Sources */,
 				05EA69D028853AEA009EA2F9 /* TabBarView.swift in Sources */,
 				05EA69DB288540EE009EA2F9 /* TabBarItemView+Drawable.swift in Sources */,
 				05EA69D828853DD0009EA2F9 /* Image+Extension.swift in Sources */,
